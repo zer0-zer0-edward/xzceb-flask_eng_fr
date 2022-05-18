@@ -1,6 +1,6 @@
 """
 This Python file instantiates all required packages for the
-IBM Language Translator service to function.
+IBM Language Translator service.
 """
 
 import os
@@ -16,10 +16,8 @@ APIKEY = os.environ['apikey']
 URL = os.environ['url']
 
 authenticator = IAMAuthenticator(APIKEY)
-language_translator = LanguageTranslatorV3(
-    version='2018-05-01',
-    authenticator=authenticator
-)
+language_translator = LanguageTranslatorV3(version='2018-05-01',
+                                           authenticator=authenticator)
 
 # Instantiate the IBM Language Translator Service
 language_translator.set_service_url(URL)
